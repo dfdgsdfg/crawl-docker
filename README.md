@@ -12,8 +12,10 @@ Build from the dockerfile
 ```
 $ git clone dfdgsdfg/DCSS-webtile-standalone-docker
 $ cd DCSS-webtile-standalone-docker
-$ sudo docker build -t crawl .
+$ sudo docker build --build-arg CRAWL_VERSION=0.21.1 -t crawl .
 ```
+
+If no CRAWL_VERSION is specified, it will default to master.
 
 Usage
 -----
