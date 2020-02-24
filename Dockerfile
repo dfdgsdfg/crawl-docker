@@ -4,6 +4,7 @@ MAINTAINER dididi <dfdgsdfg@gmail.com>
 ENV HOME /root
 ENV LC_ALL C.UTF-8
 
+ARG CRAWL_GIT_REPO=https://github.com/crawl/crawl
 ARG CRAWL_VERSION=master
 
 RUN apt-get update && \
@@ -29,10 +30,10 @@ RUN apt-get update && \
 RUN pip install tornado==3.2.2
 
 WORKDIR /root
-RUN git clone https://github.com/crawl/crawl --depth 1
+RUN git clone ${CRAWL_GIT_REPO} --depth 1
  
 WORKDIR /root/crawl
-RUN git fetch origin refs/tags/${CRAWL_VERSION}:refs/tags/${CRAWL_VERSION}
+RUN git fetch origin ${CRAWL_VERSION}
 RUN git checkout ${CRAWL_VERSION}
 RUN git submodule update --init
 
