@@ -12,10 +12,11 @@ Build from the dockerfile
 ```
 $ git clone dfdgsdfg/DCSS-webtile-standalone-docker
 $ cd DCSS-webtile-standalone-docker
-$ sudo docker build --build-arg CRAWL_VERSION=0.21.1 -t crawl .
+$ sudo docker build --build-arg CRAWL_GIT_REPO=https://github.com/Hellmonk/hellcrawl --build-arg CRAWL_VERSION=0.21.1 -t crawl .
 ```
 
-If no CRAWL_VERSION is specified, it will default to master.
+If no CRAWL_GIT_REPO is specified, it will default to 'https://github.com/crawl/crawl'.
+If no CRAWL_VERSION is specified, it will default to 'master'.
 
 Usage
 -----
